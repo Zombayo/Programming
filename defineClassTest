@@ -1,0 +1,123 @@
+using System;
+
+public class MobilePhone
+{
+    private string model;
+    private string manifacturer;
+    private decimal price;
+    private string owner;
+
+    public MobilePhone(string model, string manifacturer)
+        : this(model, manifacturer, 0.0m, null)
+    {
+
+    }
+
+    public MobilePhone(string model, string manifacturer, decimal price)
+        : this(model, manifacturer, price, null)
+    {
+
+    }
+
+    public MobilePhone(string model, string manifacturer, decimal price, string owner)
+        : this(model, manifacturer, price, owner, null, null)
+    {
+
+    }
+
+    public MobilePhone(string model, string manifacturer, decimal price, string owner, Battery battery)
+        : this(model, manifacturer, price, owner, battery, null)
+    {
+
+    }
+    
+    public MobilePhone(string model, string manifacturer, decimal price, string owner, Battery battery, Display display)
+    {
+        this.model = model;
+        this.manifacturer = manifacturer;
+        this.price = price;
+        this.owner = owner;
+        this.battery = battery;
+        this.display = display;
+    }
+
+
+}
+
+public class Battery
+{
+    private string model;
+    private double hoursIdle;
+    private double hoursTalk;
+    public enum BatteryType
+    {
+        notSet, LiIon, NiMH, NiCd
+    }
+
+    public BatteryType type;
+
+    public Battery()
+    {
+    
+    }
+
+    public Battery(string model)
+        : this(model, 0.0d, 0.0d, 0)
+    {
+
+    }
+
+    public Battery(string model, double hoursIdle)
+        : this(model, hoursIdle, 0.0d, 0)
+    {
+
+    }
+
+    public Battery(string model, double hoursIdle, double hoursTalk)
+        : this(model, hoursIdle, hoursTalk, 0)
+    {
+
+    }
+
+    public Battery(string model, double hoursIdle, double hoursTalk, BatteryType type)
+    {
+        this.model = model;
+        this.hoursIdle = hoursIdle;
+        this.hoursTalk = hoursTalk;
+        this.type = type;
+    }
+}
+
+public class Display
+{
+    private int size;
+    private int numberOfColors;
+
+    public Display()
+    {
+
+    }
+    
+    public Display(int size)
+        : this(size, 0)
+    {
+
+    }
+
+    public Display(int size, int numberOfColors)
+    {
+        this.size = size;
+        this.numberOfColors = numberOfColors;
+    }
+}
+
+class GSM
+{
+    static void Main()
+    {
+        /* Add an enumeration BatteryType (Li-Ion, NiMH, NiCd, …) 
+         * and use it as a new field for the batteries. */
+
+    }
+}
+
